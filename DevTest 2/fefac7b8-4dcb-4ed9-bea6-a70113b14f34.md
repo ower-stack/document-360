@@ -1,0 +1,104 @@
+## Upgrading from Version 1.0.* to Version 1.1.*
+
+In previous releases, we refactored the `Silex` code and added the new `Router` module with a completely new routing mechanism. The new mechanism makes use of a cache, which makes the routing way faster than our previous routing.
+
+Basically, this is not a major version update as we left the old routing in place and added a new one on top. To be able to switch to the new routing, you need to refactor `ControllerProvider` to `RouteProviderPlugin`. There are two options to do this migration.
+
+Please read the [Router documentation](https://spryker.atlassian.net/wiki/spaces/DOCS/pages/925664480/Router+TE-1210?moved=true) before you start.
+
+## Automated migration (experimental)
+
+We added an experimental tool that takes most of the refactoring away from you. 
+
+Run the following console command:
+
+```
+vendor/bin/rector process -d -c vendor/spryker/spryker/Bundles/Router/migrate/Yves/1.1.0/migrate.yml src/Pyz/Yves/*/Plugin/Provider
+```
+
+This will run the migration tool in the dry-run mode.
+
+@(Warning)()(Do not remove `-d` from the console command, otherwise, the original file will be changed.)
+
+The tool will search for all `ControllerProvider'`s and refactor them to `RouteProviderPlugin`'s. Check the diff output in the console to make sure everything has been refactored as expected. The original file will not be changed; the tool will create a new one, which needs to be reviewed as well.
+
+You should also run the code sniffer to apply your code style to the new code.
+
+Additionally, you now need to:
+
+* add all the refactored `RouteProviderPlugin`'s to `\Pyz\Yves\Router\RouterDependencyProvider::getRouteProvider()`
+* add all the `RouteProviderPlugin`'s from the `SprykerShop` modules you want to use in your system to `\Pyz\Yves\Router\RouterDependencyProvider::getRouteProvider()`.
+* remove `\Pyz\Yves\ShopApplication\YvesBootstrap::registerRouters(),` `\Pyz\Yves\ShopApplication\YvesBootstrap::registerControllerProviders(),`and `\Pyz\Yves\ShopApplication\YvesBootstrap::getControllerProviderStack()`.
+
+In case of an error, the script will stop and give you a hint of what has happened. When there is an unexpected exception, check which `ControllerProvider` makes the script fail and change it to follow the style of Spryker's `ControllerProvider`.
+
+## Manual migration
+
+The `ControllerProvider` makes use of `Silex\Application` and other silex-related code. To make your current implementation work as the new `RouteProviderPlugin,` you need to:
+
+* copy the `ControllerProvider `class from `Plugin\Provider` to `Plugin\Router.`
+* rename the class from `ControllerProvider` to `RouteProviderPlugin.`
+* extend `\Spryker\Yves\Router\Plugin\RouteProvider\AbstractRouteProviderPlugin` instead of `\SprykerShop\Yves\ShopApplication\Plugin\Provider\AbstractYvesControllerProvider.`
+* rename `defineControllers()` to `addRoutes().`
+* change the argument of `defineControllers` from `Silex\Application $app` to `\SprykerShop\Yves\Router\Route\RouteCollection $routeCollection.`
+* `add the return type \SprykerShop\Yves\Router\Route\RouteCollection` to the renamed method.
+* add `\SprykerShop\Yves\Router\Route\RouteCollection $routeCollection to `all the `add*Route()` methods.
+* `add the return type \SprykerShop\Yves\Router\Route\RouteCollection` to all the `add*Route()` methods.
+* rename all the `create*Controller()` methods to the new `build*Route()` methods.
+* store the returned `Route` of the `build*Route()` method in the temporary variable `$route`.
+* after each `build*Route()` method add `$routeCollection->add('route-name', $route)`; `'route-name'` is the second argument of the old `create*Controller()` method and you need to cut it out from the `build*Route()` method.
+* return `$routeCollection` from all the `build*Route()` methods.
+* remove the first `assert()` method that contains `$allowedLocalesPattern`.
+* remove the first `value()` method and replace the placeholder `{foo-bar}` in your URL (the first argument of `build*Route()`) with the value.
+* update all the doc comments.
+* check all the code that makes use of `$allowedLocalesPattern` and refactor it out. You have to use `\Spryker\Yves\Router\Plugin\RouteManipulator\LocalePrefixUrlRouteManipulatorPlugin` or build your own route manipulator for it.
+* add all the refactored `RouteProviderPlugin`'s to `\Pyz\Yves\Router\RouterDependencyProvider::getRouteProvider()`
+* remove `\Pyz\Yves\ShopApplication\YvesBootstrap::registerRouters()`,` \Pyz\Yves\ShopApplication\YvesBootstrap::registerControllerProviders()`and `\Pyz\Yves\ShopApplication\YvesBootstrap::getControllerProviderStack()`.
+
+### Example:
+
+```
+-class ShoppingListWidgetControllerProvider extends AbstractYvesControllerProvider
++class ShoppingListWidgetRouteProviderPlugin extends \Spryker\Yves\Router\Plugin\RouteProvider\AbstractRouteProviderPlugin
+ {
+     public const ROUTE_ADD_ITEM = 'shopping-list/add-item';
+ 
+     /**
+-     * @param \Silex\Application $app
++     * @param \SprykerShop\Yves\Router\Route\RouteCollection $routeCollections
+      *
+-     * @return void
++     * @return \SprykerShop\Yves\Router\Route\RouteCollection
+      */
+-    protected function defineControllers(Application $app): void
++    public function addRoutes(\Spryker\Shared\Router\Route\RouteCollection $routeCollection): \SprykerShop\Yves\Router\Route\RouteCollection
+     {
+-        $this->addAddItemRoute();
++        $routeCollection = $this->addAddItemRoute($routeCollection);
++        return $routeCollection;
+     }
+ 
+     /**
+-     * @return $this
++     * @param \SprykerShop\Yves\Router\Route\RouteCollection $routeCollection
++     *
++     * @return \SprykerShop\Yves\Router\Route\RouteCollection
+      */
+-    protected function addAddItemRoute()
++    protected function addAddItemRoute(\SprykerShop\Yves\Router\Route\RouteCollection $routeCollection): \SprykerShop\Yves\Router\Route\RouteCollection
+     {
+-        $this->createController('/{shoppingList}/add-item', static::ROUTE_ADD_ITEM, 'ShoppingListWidget', 'ShoppingListWidget')
+-            ->assert('shoppingList', $this->getAllowedLocalesPattern() . 'shopping-list|shopping-list')
+-            ->value('shoppingList', 'shopping-list');
+-
+-        return $this;
++        $route = $this->buildRoute('/shopping-list/add-item', 'ShoppingListWidget', 'ShoppingListWidget', 'indexAction');
++        $routeCollection->add(static::ROUTE_ADD_ITEM, $route);
++        return $routeCollection;
+     }
+ }
+```
+
+## Backward compatible change
+
+Previously, we supported camelCased URLs, which is no longer supported. To avoid manual updating of all the modules that use camelCased URLs, you can add `\Spryker\Zed\Router\Communication\Plugin\Router\RouterEnhancer\BackwardsCompatibleUrlRouterEnhancerPlugin` to your project's `\Pyz\Zed\Router\RouterDependencyProvider::getRouterEnhancerPlugins()` method. This will convert all camelCased URLs to the dashed URLs before the URL is sent to the `\Symfony\Component\Routing\Matcher\Dumper\CompiledUrlMatcherTrait::match()` method.
