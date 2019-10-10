@@ -1,0 +1,11 @@
+In the B2B world, company account is a powerful instrument that allows companies to manage their users and maintain control over the purchasing process. One of the most important building blocks of the company account is business units, or sub-divisions of the company, formed due to geographical, technological, marketing or strategic reasons.
+
+The business units enable to narrow down responsibilities and establish certain permissions within them, as well as gain better control of all processes. Therefore, creating a proper business units hierarchy is important to operate the entire company more efficiently.
+
+With the Business Units Management, company users can create a visualized business units hierarchy. They can add, edit and delete business units, assign parent or child business units to them as well as add addresses for each business unit. This feature is an absolute must-have for all B2B customers, as it allows to create a clear formal organizational structure of their companies to efficiently manage users, purchasing processes, permissions and all kinds of activities within companies and their business units.
+
+If you are:
+
+| Developer|Back Office User|
+|---|---|
+|[Get a general idea of the Business Units Management feature](https://documentation.spryker.com/v4/docs/business-unit-management-feature-overview ) | [Get a general idea of the Business Units Management feature](https://documentation.spryker.com/v4/docs/business-unit-management-feature-overview ) |
