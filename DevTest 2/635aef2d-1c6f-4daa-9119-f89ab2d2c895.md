@@ -1,0 +1,2 @@
+## Upgrading from version 1.* to 3.0.0
+@(Info)()(This module release has been created for internal reasons and does not require migration efforts. Please [contact us](https://support.spryker.com/hc/en-us) if you have any questions.)
