@@ -1,0 +1,3 @@
+This video shows how CMS content is displayed and managed in Spryker. We use the Demoshop to demonstrate this feature.
+
+<iframe src="https://fast.wistia.net/embed/iframe/sxufuvyl75" title="CMS Pages" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen="0" mozallowfullscreen="0" webkitallowfullscreen="0" oallowfullscreen="0" msallowfullscreen="0" width="589" height="315"></iframe>
