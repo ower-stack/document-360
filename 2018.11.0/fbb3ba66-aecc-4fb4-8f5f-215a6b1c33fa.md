@@ -1,5 +1,4 @@
-<details open>
-<summary>Upgrading from Version 3.0.* Version to 4.0.0</summary>
+## Upgrading from Version 3.0.* Version to 4.0.0
 
 In this new version of the **ShipmentDiscountConnector** module, we have added support of split delivery. You can find more details about the changes on the [ShipmentDiscountConnector module release page](https://github.com/spryker/shipment-discount-connector/releases).
     
@@ -20,14 +19,9 @@ console transfer:generate
 ```
     
 *Estimated migration time: 5 min*
-</br>
-</details>
 
-
-<details open>
-<summary>Upgrading from Version 1.* to Version 3.0.0</summary>
+## Upgrading from Version 1.* to Version 3.0.0
 
 @(Info)()(To dismantle the Horizontal Barrier and enable partial module updates on projects, a Technical Release took place. Public API of source and target major versions are equal. No migration efforts are required. Please [contact us](https://support.spryker.com/hc/en-us) if you have any questions.)
-    
-</br>
-</details>
+
+<!-- Last review date: Sep 18, 2019 by Denys Sokolov, Yuliia Boiko -->
