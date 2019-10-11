@@ -14,8 +14,3 @@ To start database migration run the following commands:
 * `vendor/bin/console propel:diff`, manual review is necessary for the generated migration file.
 * `vendor/bin/console` propel:migrate
 * `vendor/bin/console propel:model:build`
-
-**See also:**
-* [Learn how to migrate to a newer version of Product module](https://documentation.spryker.com/v4/docs/mg-product)
-* [Learn how to migrate to a newer version of Product Label GUI module](https://documentation.spryker.com/v4/docs/mg-product-label-gui)
-* [Learn how to migrate to a newer version of Product Bundle module](https://documentation.spryker.com/v4/docs/mg-product-bundle)
