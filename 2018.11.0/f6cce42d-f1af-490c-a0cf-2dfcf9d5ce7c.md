@@ -6,8 +6,7 @@ Yves knows two types of URLs (see `YvesBootstrap`->`registerRouters()`).
 
 1. URLs that are defined in the database (e.g. for Product Detail, CMS or Category Pages).
 2. URLs that are defined in the code (e.g. for Cart and Checkout).
-
-            ![](../Resources/Images/Databaase Schema Guide/url.png)
+![URL](https://spryker.s3.eu-central-1.amazonaws.com/docs/Developer+Guide/Database+Schema+Guide/URL+Schema/url.png){height="" width=""}
 
 Structure:
 
@@ -17,8 +16,7 @@ Structure:
 ### URL Resources
 
 @(Info)()(URLs are related to Resources. A Resource can be something like a Category- or a Product Detail Page. Each Resource has one URL per Locale.)
-
-            ![](../Resources/Images/Databaase Schema Guide/url-resources.png)
+![URL resources](https://spryker.s3.eu-central-1.amazonaws.com/docs/Developer+Guide/Database+Schema+Guide/URL+Schema/url-resources.png){height="" width=""}
 
 **Structure**:
 
