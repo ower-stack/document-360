@@ -4,8 +4,7 @@
 ### Company and Business Units
 
 Companies can contain many business units, which are made up of one or more company users. By providing this structure customer (buyers) on a Spryker system may accurately model their purchasing processes according to their real company structure.
-
-            ![](../Resources/Images/Databaase Schema Guide/company-business-units.png)
+![Company business units](https://spryker.s3.eu-central-1.amazonaws.com/docs/Developer+Guide/Database+Schema+Guide/Company+Account+Schema/company-business-units.png){height="" width=""}
 
 **Structure**:
 
@@ -24,8 +23,7 @@ Companies can contain many business units, which are made up of one or more comp
 ### Company and Business Unit Addresses
 
 @(Info)()(Companies and Business Units have multiple Addresses which can be used during the Checkout.)
-
-            ![](../Resources/Images/Databaase Schema Guide/company-business-unit-address.png)
+![Company and Business unit addresses](https://spryker.s3.eu-central-1.amazonaws.com/docs/Developer+Guide/Database+Schema+Guide/Company+Account+Schema/company-business-unit-address.png){height="" width=""}
 
 **Structure**:
 
@@ -36,8 +34,7 @@ Companies can contain many business units, which are made up of one or more comp
 ### Company Users
 
 A Company has multiple Users which belong to the Company's Business Units.
-
-            ![](../Resources/Images/Databaase Schema Guide/company-user.png)
+![Company users](https://spryker.s3.eu-central-1.amazonaws.com/docs/Developer+Guide/Database+Schema+Guide/Company+Account+Schema/company-user.png){height="" width=""}
 
 **Structure**:
 
@@ -47,8 +44,7 @@ A Company has multiple Users which belong to the Company's Business Units.
 ### Company User Roles & Permissions
 
 A Company User can have one or multiple Roles which define what the User is allowed or disallowed to do.
-
-            ![](../Resources/Images/Databaase Schema Guide/company-user-roles-permissions.png)
+![Company user roles and permissions](https://spryker.s3.eu-central-1.amazonaws.com/docs/Developer+Guide/Database+Schema+Guide/Company+Account+Schema/company-user-roles-permissions.png){height="" width=""}
 
 **Structure**:
 
@@ -73,8 +69,7 @@ E.g. A Buyer is allowed to add products up to 500.- to the Cart. The "500" is a 
 ### Permission Groups (for Quotes and Shopping Lists)
 
 Shopping Lists and Quotes can be shared with Company Users. This sharing can be regulated with the help of Permissions.
-
-            ![](../Resources/Images/Databaase Schema Guide/permission-groups.png)
+![Permission groups](https://spryker.s3.eu-central-1.amazonaws.com/docs/Developer+Guide/Database+Schema+Guide/Company+Account+Schema/permission-groups.png){height="" width=""}
 
 **Structure**:
 
