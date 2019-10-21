@@ -287,6 +287,6 @@ class StringReverser implements StringReverserInterface
 
 3. Run the test again `vendor/bin/codecept run -c tests/PyzTest/Zed/StringReverser`. The test should pass.
 
-_Last review date: Jul 11, 2019_
+<!-- Last review date: Jul 11, 2019_
 
 [//]: # (by Hussam Hebbo, Yuliia Boiko)
