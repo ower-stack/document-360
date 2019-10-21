@@ -95,6 +95,4 @@ $config[ApplicationConstants::YVES_TRUSTED_PROXIES] = [
 
 As described above, the application will check if the value of `$request->server->get('REMOTE_ADDR')` can be found in your configured trusted proxies. If so, the current request will be marked as secure when the value of `$request->header->get('X_FORWARDED_PROTO')` is HTTPS.
 
-_Last review date: Sep 21, 2017_
-
-<!--by René Klatt-->
+<!-- Last review date: Sep 21, 2017 --by René Klatt-->
