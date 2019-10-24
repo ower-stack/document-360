@@ -1,6 +1,6 @@
 ## Partner Information
 
-[About Amazon Pay](https://pay.amazon.com/de) 
+[ABOUT AMAZONPAY](https://pay.amazon.com/de) 
 Amazon pay is a solution which allows buyers to make purchases via their Amazon accounts. Basically it consists of client side tools (widget, javascripts etc) and Amazon API with SDKs written for different programming languages (PHP, Python, Ruby, Java, C#).
 
 Client side tools are used for displaying GUI elements on some common pages of an internet shop and it includes a "Pay with Amazon" button on the cart page and widgets for selecting checkout options such as delivery address and payment method.
@@ -8,19 +8,6 @@ Client side tools are used for displaying GUI elements on some common pages of a
 On the server side, there are API functions for after a buyer decides to use Amazon Pay. Once you the "Seller" decides to integrate the shop with Amazon Pay, all necessary credentials will be provided to you create an Amazon account.
 
 Subsequent all integration functionality is provided by Amazon Pay.
-
-<b>See also:</b>
-* [Configure Amazon Pay for the Legacy Demoshop](https://documentation.spryker.com/v4/docs/amazon-pay)
-* [Configure Amazon Pay for the Spryker Commerce OS \(SCOS\)](https://documentation.spryker.com/v4/docs/amazon-pay-configuration-scos)
-* [Configure Amazon Pay API](https://documentation.spryker.com/v4/docs/amazon-pay-api)
-* [Obtaining Amazon Order Reference and Shipping Addresses details](https://documentation.spryker.com/v4/docs/amazon-pay-order-ref-info)
-* [Learn how Amazon Pay Refund works](https://documentation.spryker.com/v4/docs/amazon-pay-refund)
-* [Rendering the "Pay with Amazon" button on the Cart page](https://documentation.spryker.com/v4/docs/amazon-pay-rendering-pay)
-* [Learn how Amazon Pay Sandbox Simulations work](https://documentation.spryker.com/v4/docs/amazon-pay-simulations)
-* [Learn about Amazon Pay state machine for synchronous and asynchronous flows](https://documentation.spryker.com/v4/docs/amazon-pay-state-machine)
-* [Learn about OMS commands](https://documentation.spryker.com/v4/docs/amazon-pay-state-machine.htm#oms-commands)
-* [Check out Amazon Pay example email notifications](https://documentation.spryker.com/v4/docs/amazon-pay-email-notification.htm)
-* [Check support of bundled products with Amazon](https://documentation.spryker.com/v4/docs/amazon-pay-support-bundled-products.htm)
 
 ---
 
