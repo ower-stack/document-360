@@ -4,8 +4,25 @@ The business units enable to narrow down responsibilities and establish certain 
 
 With the Business Units Management, company users can create a visualized business units hierarchy. They can add, edit and delete business units, assign parent or child business units to them as well as add addresses for each business unit. This feature is an absolute must-have for all B2B customers, as it allows to create a clear formal organizational structure of their companies to efficiently manage users, purchasing processes, permissions and all kinds of activities within companies and their business units.
 
-If you are:
+## If you are:
 
-| Developer|Back Office User|
-|---|---|
-|[Get a general idea of the Business Units Management feature](https://documentation.spryker.com/v4/docs/business-unit-management-feature-overview ) | [Get a general idea of the Business Units Management feature](https://documentation.spryker.com/v4/docs/business-unit-management-feature-overview ) |
+<div class="mr-container">
+    <div class="mr-list-container">
+        <!-- col1 -->
+        <div class="mr-col">
+            <ul class="mr-list mr-list-green">
+                <li class="mr-title">Developer</li>
+                <li><a href="https://documentation.spryker.com/v4/docs/business-unit-management-feature-overview" class="mr-link">Familiarize yourself with the the Business Units Management feature</a></li>     
+            </ul>
+        </div>
+        <!-- col2 -->
+        <div class="mr-col">
+            <ul class="mr-list mr-list-blue">
+                <li class="mr-title"> Back Office User</li>
+                <li><a href="https://documentation.spryker.com/v4/docs/managing-companies" class="mr-link">Manage company units</a></li>
+            </ul>
+        </div>
+         </div>
+</div>
+
+
