@@ -12,7 +12,9 @@ With the Business Units Management, company users can create a visualized busine
         <div class="mr-col">
             <ul class="mr-list mr-list-green">
                 <li class="mr-title">Developer</li>
-                <li><a href="https://documentation.spryker.com/v4/docs/business-unit-management-feature-overview" class="mr-link">Familiarize yourself with the the Business Units Management feature</a></li>     
+                <li><a href="https://documentation.spryker.com/v4/docs/business-unit-management-feature-overview" class="mr-link">Familiarize yourself with the the Business Units Management feature</a></li>
+                <li><a href="https://documentation.spryker.com/v4/docs/db-schema-company-account.htm#company-and-business-units" class="mr-link">Learn the database schema for Company and Business Units</a></li>
+                <li><a href="https://documentation.spryker.com/v4/docs/db-schema-company-account#company-and-business-unit-addresses" class="mr-link">Learn the database schema for Company and Business Unit Addresses</a></li>
             </ul>
         </div>
         <!-- col2 -->
