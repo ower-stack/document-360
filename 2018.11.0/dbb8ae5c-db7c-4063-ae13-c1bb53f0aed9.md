@@ -27,7 +27,7 @@ The following table describes the attributes you enter when creating or editing 
 | --- | --- |
 | **Store relation** |  A store locale for which the page will be available. |
 | **Is searchable** | An option that can be selected if you want your page to be searched for on the web. |
-| **Template** | A template that defines a placeholder structure of your block.  |
+| **Template** | A template that defines the page layout.  |
 | **Valid from** and **Valid to** | Dates during which a page will be visible on the shop website. |
 | **Name** | A name of the page. |
 | **Url** | An address of the page on the web. |
