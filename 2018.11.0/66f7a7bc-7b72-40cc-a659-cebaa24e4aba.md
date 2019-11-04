@@ -1,5 +1,3 @@
-**In this page:**
-
 To provide each customer with the features they require, Spryker Commerce OS has been split into modules. Each customer can have a unique set of modules, and even module versions, specific to their business requirements. This fact combined with the possibility for customers to develop functionality on their own poses a big challenge for frontend developers. To ease the task, Spryker Frontend implements a design methodology called **atomic design**. Because of this, the UI layer of Spryker is called *Atomic Frontend*.
 
 The following document describes the basic principles of Spryker UI implementation and explains how to perform the tasks required to design Spryker UI.
