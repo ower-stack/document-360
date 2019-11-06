@@ -56,21 +56,3 @@ class HeidelpayPostSavePlugin extends BaseAbstractPlugin implements CheckoutPost
 In the response Heidelpay expects an URL string which shows where customer has to be redirected. In case  if customer successfully confirmed payment, there should be a link to checkout order success step, in case of failure - checkout payment failed action with error code (see`HeidelpayController::paymentFailedAction()` and [Heidelpay - Workflow for Errors](https://documentation.spryker.com/v4/docs/heidelpay-error-workflow) section). Heidelpay redirects customer to the given URL and payment process is finished. 
 
 Now the order can be considered as "paid".
-
-**See also:**
-
-* [Familiarize yourself with Heidelpay payment method](https://documentation.spryker.com/v4/docs/heidelpay)
-* [Install Heidelpay into your project](https://documentation.spryker.com/v4/docs/heidelpay-installation)
-* [Integrate Heidelpay into the Legacy Demoshop](https://documentation.spryker.com/v4/docs/heidelpay-integration)
-* [Configure Heidelpay for Spryker Commerce OS](https://documentation.spryker.com/v4/docs/heidelpay-configuration-scos)
-* [Integrate Heidelpay into the Spryker Commerce OS](https://documentation.spryker.com/v4/docs/heidelpay-integration-scos)
-* [Familiarize yourself with the workflow for errors in Heidelpay](https://documentation.spryker.com/v4/docs/heidelpay-error-workflow)
-* [Configure Paypal Authorize for Heidelpay](https://documentation.spryker.com/v4/docs/heidelpay-authorize)
-* [Configure Credit Card Secure for Heidelpay](https://documentation.spryker.com/v4/docs/heidelpay-credit-card)
-* [Configure Direct Debit payment for Heidelpay](https://documentation.spryker.com/v4/docs/heidelpay-direct-debit)
-* [Configure Easy Credit payment for Heidelpay](https://documentation.spryker.com/v4/docs/heidelpay-easy-credit)
-* [Configure iDeal for Hedelpay](https://documentation.spryker.com/v4/docs/heidelpay-ideal)
-* [Configure Sofort payment for Heidelay](https://documentation.spryker.com/v4/docs/heidelpay-sofort)
-* [Configure Invoice Secured B2C payment for Heidelpay](https://documentation.spryker.com/v4/docs/heidelpay-invoice-secured-b2c)
-* [Configure Split payment Marketplace for Heidelpay](https://documentation.spryker.com/v4/docs/heidelpay-split-payment-marketplace)
-
