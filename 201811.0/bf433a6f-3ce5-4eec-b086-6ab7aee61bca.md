@@ -183,6 +183,6 @@ Add the products variable to `Pyz/Zed/HelloWorld/Presentation/Index/index.twig` 
 
 {% endblock %}
 ```
-Run the vendor/bin/console router:cache:warm-up command.
+Run the `vendor/bin/console router:cache:warm-up` command.
 
 This is all! To see the table you created, go to http://zed.de.demoshop.local/hello-world. You will be able to see the products listed in the table.
