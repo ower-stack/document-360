@@ -1,7 +1,7 @@
 lsi: false
 safe: true
 incremental: false
-highlighter: rouge
+highlighter: pygments
 gist:
   noscript: false
 markdown: GFM
